@@ -10,7 +10,14 @@
       homebrew: name={{item}} state=latest
       with_items:
         - brew-cask-completion
+        - git
+        - the_silver_searcher
+        - zsh
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
       with_items:
+        - atom
+        - iterm
+        - skitch
+        - slack
         - spectacle
