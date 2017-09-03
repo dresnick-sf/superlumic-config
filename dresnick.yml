@@ -21,6 +21,7 @@
         - skitch
         - slack
         - spectacle
+        - whatsapp
     - name: add to sudoers without password
       become: yes
       lineinfile: >
