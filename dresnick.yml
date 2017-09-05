@@ -9,6 +9,9 @@
     - name: install brew apps
       homebrew: name={{item}} state=latest
       with_items:
+        # brew reinstall asciidoc --with-docbook-xsl
+        # export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
+        - lastpass-cli
         - brew-cask-completion
         - git
         - the_silver_searcher
