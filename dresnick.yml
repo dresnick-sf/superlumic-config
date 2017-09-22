@@ -5,7 +5,7 @@
 
   tasks:
     - homebrew_tap:
-        name: caskroom/fonts       
+        name: caskroom/fonts
     - name: install brew apps
       homebrew: name={{item}} state=latest
       with_items:
@@ -35,3 +35,4 @@
         create=true
       with_items:
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
+        - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
