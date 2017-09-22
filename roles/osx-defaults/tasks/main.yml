@@ -24,6 +24,15 @@
         key: 'NSQuitAlwaysKeepsWindows'
         type: boolean
         value: true
+      - domain: 'com.googlecode.iterm2'
+        key: 'OpenArrangementAtStartup'
+        type: boolean
+        value: false
+      - domain: 'com.googlecode.iterm2'
+        key: 'OpenNoWindowsAtStartup'
+        type: boolean
+        value: false
+
       - domain: 'Apple Global Domain'
         key: 'AppleInterfaceStyle'
         type: string
