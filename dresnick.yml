@@ -37,4 +37,4 @@
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
   roles:
-    - superlumic-osx-defaults
+    - osx-defaults
