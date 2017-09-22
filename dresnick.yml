@@ -38,3 +38,4 @@
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
   roles:
     - osx-defaults
+    - scheduled-pmset
