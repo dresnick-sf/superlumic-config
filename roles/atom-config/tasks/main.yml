@@ -1,0 +1,19 @@
+#
+- name: 'apm clean : delete unused packages in node_modules'
+  command: apm clean
+
+- name: apm upgrade all packages
+  command: 'apm upgrade'
+
+- name: 'apm install : install atom packages'
+  include_tasks: install-if-missing.yml
+  vars:
+    package_name: "{{ item }}"
+  with_items:
+    - highlight-selected
+    - language-docker
+    - language-groovy
+    - language-jenkinsfile
+    - minimap
+    - minimap-highlight-selected
+    - wakatime
