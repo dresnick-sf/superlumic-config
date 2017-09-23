@@ -1,4 +1,5 @@
-  - osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+  - name: Configure Dock
+    osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
     notify: killall Dock
     with_items:
       - domain: 'com.apple.dock'
