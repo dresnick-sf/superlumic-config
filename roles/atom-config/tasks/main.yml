@@ -1,9 +1,14 @@
 #
 - name: 'apm clean : delete unused packages in node_modules'
   command: apm clean
+  changed_when: false
 
 - name: apm upgrade all packages
   command: 'apm upgrade'
+  changed_when: false
+  register: atom_upgrade_result
+
+- debug: var=atom_upgrade_result
 
 - name: 'apm install : install atom packages'
   include_tasks: install-if-missing.yml
@@ -17,3 +22,13 @@
     - minimap
     - minimap-highlight-selected
     - wakatime
+
+- name: Check if Atom is running
+  shell: ps -ef | grep atom | grep -v grep
+  ignore_errors: yes
+  changed_when: false
+  register: atom_process_result
+
+- name: Copy config.cson to ~/.atom
+  copy: src=config.cson dest=~/.atom backup=yes
+  when: atom_process_result.rc != 0

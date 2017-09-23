@@ -21,6 +21,7 @@
       with_items:
         - atom
         - iterm2
+        - font-fira-code
         - skitch
         - slack
         - spectacle

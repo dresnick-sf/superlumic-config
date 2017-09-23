@@ -1,0 +1,20 @@
+"*":
+  core:
+    closeDeletedFileTabs: true
+    telemetryConsent: "limited"
+  editor:
+    fontFamily: "FiraCode-Retina"
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "ae354864-2c4d-4511-b076-1118d095109a"
+  minimap:
+    plugins:
+      "highlight-selected": true
+      "highlight-selectedDecorationsZIndex": 0
+  "tree-view":
+    hideVcsIgnoredFiles: true
+  wakatime:
+    apikey: "Saved in your ~/.wakatime.cfg file"
+  welcome:
+    showOnStartup: false
