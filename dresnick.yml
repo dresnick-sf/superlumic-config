@@ -36,6 +36,13 @@
       with_items:
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
+    - name: Configure lpass agent to never exit
+      lineinfile: >
+        dest=~/.lpass/env
+        regexp='^LPASS_AGENT_TIMEOUT'
+        line='LPASS_AGENT_TIMEOUT=0'
+        state=present
+        create=true
   roles:
     - osx-defaults
     - scheduled-pmset
