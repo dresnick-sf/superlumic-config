@@ -13,7 +13,9 @@
         # export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
         - lastpass-cli
         - brew-cask-completion
+        - ffmpeg
         - git
+        - id3v2
         - the_silver_searcher
         - zsh
     - name: install personal cask applications
@@ -22,6 +24,8 @@
         - atom
         - iterm2
         - font-fira-code
+        - google-play-music-desktop-player
+        - music-manager
         - skitch
         - slack
         - spectacle
