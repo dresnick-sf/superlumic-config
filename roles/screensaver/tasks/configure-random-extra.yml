@@ -1,0 +1,40 @@
+- name: get list of screensavers from file system
+  find:
+    paths:
+      - /Library/Screen Savers
+      - /System/Library/Screen Savers
+      - /System/Library/Frameworks/ScreenSaver.framework/Versions/A/Resources
+      - ~/Library/Screen Savers
+    pattern: '*.saver'
+    file_type: directory
+  register: find_return
+
+- name: massage list of screensavers
+  set_fact:
+    screensaver_paths: "{{ \
+      find_return.files | \
+      map(attribute='path') | \
+      map('basename') | \
+      map('regex_replace', '^(.*)\\.saver$', '\\1' ) | \
+      list | \
+      union(missing_screensavers) | \
+      unique | \
+      sort(case_sensitive='True') }}"
+
+- debug: var=screensaver_paths
+- debug:
+    msg: "Total number of screensavers: {{ screensaver_paths | length }}"
+
+- name: prepare RandomExtra screensaver configuration file
+  template:
+    src: randomextra.j2
+    dest: /tmp/randomextra.plist
+
+- name: Configure RandomExtra screensaver
+  shell: defaults -currentHost import com.webbingtec.randomextra - < /tmp/randomextra.plist
+  notify: killall cfprefsd
+
+- name: remove temp screensaver configuration file
+  file:
+    path: /tmp/randomextra.plist
+    state: absent

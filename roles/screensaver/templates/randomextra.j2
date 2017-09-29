@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AutoActive1</key>
+	<true/>
+	<key>ConfigureCount</key>
+	<integer>5</integer>
+	<key>Gamma</key>
+	<integer>0</integer>
+	<key>Modules</key>
+	<dict>
+{% for item in screensaver_paths %}
+		<key>{{ item }}</key>
+		<dict>
+			<key>Active</key>
+			<{{ screensaver_active[item] | default(screensaver_active['default']) }}/>
+			<key>Name</key>
+			<string>{{ item }}</string>
+			<key>Picked</key>
+			<false/>
+			<key>PickedCount</key>
+			<integer>0</integer>
+			<key>Priority</key>
+			<integer>{{ screensaver_priority[item] | default(screensaver_priority['default']) }}</integer>
+			<key>Reviewed</key>
+			<true/>
+		</dict>
+{% endfor %}
+	</dict>
+	<key>OnlyMainScreen</key>
+	<true/>
+	<key>PickMethod</key>
+	<integer>1</integer>
+	<key>RemindFrequence</key>
+	<integer>1</integer>
+	<key>Switched</key>
+	<true/>
+	<key>TwoM</key>
+	<integer>1</integer>
+</dict>
+</plist>

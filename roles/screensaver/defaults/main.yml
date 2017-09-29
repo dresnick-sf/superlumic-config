@@ -1,0 +1,14 @@
+missing_screensavers:
+  - screensaver.shuffle
+  - "Word of the Day"
+
+screensaver_priority:
+  default: 50
+  # Aerial: 51
+
+screensaver_active:
+  default: 'true'
+  Random: 'false'
+  RandomExtra3: 'false'
+  WindupRobot: 'false'
+  screensaver.shuffle: 'false'

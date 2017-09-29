@@ -1,0 +1,15 @@
+- name: install screen savers
+  homebrew_cask: name={{item}} state=present
+  with_items:
+    - aerial
+    - xscreensaver
+
+- name: configure RandomExtra screensaver
+  import_tasks: configure-random-extra.yml
+
+- name: Set RandomExtra as screensaver
+  shell: |
+    defaults write com.apple.screensaver askForPassword 1
+    defaults write com.apple.screensaver askForPasswordDelay 0
+    defaults -currentHost write com.apple.screensaver idleTime 300
+    defaults -currentHost write com.apple.screensaver moduleDict -dict moduleName RandomExtra3 path {{ ansible_user_dir }}/Library/Screen\ Savers/RandomExtra3.saver type 0
