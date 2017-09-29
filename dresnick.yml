@@ -16,6 +16,7 @@
         - ffmpeg
         - git
         - id3v2
+        - jq
         - the_silver_searcher
         - zsh
     - name: install personal cask applications
@@ -29,6 +30,7 @@
         - skitch
         - slack
         - spectacle
+        - studio-3t
         - whatsapp
     - name: add to sudoers without password
       become: yes
