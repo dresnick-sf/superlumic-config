@@ -1,1 +1,5 @@
 ---
+
+- src: git@github.com:Implisit/superlumic-role-implisit-dev.git
+  scm: git
+  name: implisit-dev

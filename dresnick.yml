@@ -9,9 +9,6 @@
     - name: install brew apps
       homebrew: name={{item}} state=latest
       with_items:
-        # brew reinstall asciidoc --with-docbook-xsl
-        # export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
-        - lastpass-cli
         - brew-cask-completion
         - ffmpeg
         - fzf
@@ -48,13 +45,6 @@
       with_items:
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
-    - name: Configure lastpass agent to never exit
-      lineinfile: >
-        dest=~/.lpass/env
-        regexp='^LPASS_AGENT_TIMEOUT'
-        line='LPASS_AGENT_TIMEOUT=0'
-        state=present
-        create=true
   roles:
     - { role: osx-defaults, tags: osx-defaults }
     - { role: scheduled-pmset, tags: scheduled-pmset }
@@ -63,3 +53,4 @@
     - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }
+    - { role: implisit-dev, tags: implisit-dev }
