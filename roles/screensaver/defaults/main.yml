@@ -4,7 +4,7 @@ missing_screensavers:
 
 screensaver_priority:
   default: 50
-  # Aerial: 51
+  Aerial: 51
 
 screensaver_active:
   default: 'true'
@@ -12,3 +12,4 @@ screensaver_active:
   RandomExtra3: 'false'
   WindupRobot: 'false'
   screensaver.shuffle: 'false'
+  "iTunes Artwork": 'false'
