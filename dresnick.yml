@@ -55,3 +55,4 @@
     - scheduled-pmset
     - atom-config
     - { role: screensaver, tags: screensaver }
+    - { role: ipython, tags: ipython }

@@ -1,0 +1,10 @@
+---
+
+- name: Ensure default profile folder exists
+  file:
+    path: ~/.ipython/profile_default
+    state: directory
+- name: Copy ipython config to default profile
+  copy:
+    src: ipython_config.py
+    dest: ~/.ipython/profile_default
