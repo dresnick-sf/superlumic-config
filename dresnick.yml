@@ -53,6 +53,6 @@
   roles:
     - osx-defaults
     - scheduled-pmset
-    - atom-config
+    - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }

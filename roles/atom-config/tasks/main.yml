@@ -15,6 +15,7 @@
   vars:
     package_name: "{{ item }}"
   with_items:
+    - atom-python-test
     - highlight-selected
     - language-docker
     - language-groovy
