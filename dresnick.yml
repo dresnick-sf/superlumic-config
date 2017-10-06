@@ -18,6 +18,7 @@
         - id3v2
         - jq
         - the_silver_searcher
+        - watch
         - zsh
     - name: install personal cask applications
       homebrew_cask: name={{item}} state=present
