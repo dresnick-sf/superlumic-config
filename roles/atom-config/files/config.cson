@@ -1,9 +1,13 @@
 "*":
+  "atom-python-test":
+    outputColored: true
   core:
+    allowPendingPaneItems: false
     closeDeletedFileTabs: true
     telemetryConsent: "limited"
   editor:
     fontFamily: "FiraCode-Retina"
+    preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
   "exception-reporting":
