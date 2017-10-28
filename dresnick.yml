@@ -14,6 +14,8 @@
         - lastpass-cli
         - brew-cask-completion
         - ffmpeg
+        - fzf
+        - ripgrep
         - git
         - id3v2
         - jq
@@ -54,6 +56,7 @@
   roles:
     - osx-defaults
     - scheduled-pmset
+    - { role: various, tags: various }
     - { role: amazon-ecr-credential-helper, tags: amazon-ecr-credential-helper }
     - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
