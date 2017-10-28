@@ -38,3 +38,12 @@
         key: 'AppleInterfaceStyle'
         type: string
         value: Dark
+
+      - domain: 'NSGlobalDomain'
+        key: 'KeyRepeat'
+        type: int
+        value: 1
+      - domain: 'NSGlobalDomain'
+        key: 'InitialKeyRepeat'
+        type: int
+        value: 10
