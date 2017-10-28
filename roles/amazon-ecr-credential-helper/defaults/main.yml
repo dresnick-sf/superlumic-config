@@ -1,0 +1,2 @@
+checkout_path: /tmp/amazon-ecr-credential-helper
+folder_in_path: ~/bin

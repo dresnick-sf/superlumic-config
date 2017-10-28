@@ -54,6 +54,7 @@
   roles:
     - osx-defaults
     - scheduled-pmset
+    - { role: amazon-ecr-credential-helper, tags: amazon-ecr-credential-helper }
     - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }

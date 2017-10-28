@@ -1,0 +1,22 @@
+---
+
+- name: get amazon-ecr-credential-helper git repo
+  git:
+    repo: 'https://github.com/awslabs/amazon-ecr-credential-helper.git'
+    dest: "{{ checkout_path }}"
+- name: compile the helper for mac
+  shell: TARGET_GOOS=darwin make docker
+  args:
+    chdir: "{{ checkout_path }}"
+    creates: "{{ checkout_path }}/bin/local/docker-credential-ecr-login"
+- name: copy the executable
+  copy:
+    src: "{{ checkout_path }}/bin/local/docker-credential-ecr-login"
+    dest: "{{ folder_in_path }}"
+- name: copy ~/.docker/config.json
+  copy:
+    src: config.json
+    dest: ~/.docker/config.json
+    backup: yes
+# - name: check that login works by pulling awscli
+#   command: docker pull 187473451979.dkr.ecr.us-west-2.amazonaws.com/awscli:latest

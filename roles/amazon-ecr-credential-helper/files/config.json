@@ -1,0 +1,13 @@
+{
+	"auths": {
+		"187473451979.dkr.ecr.us-west-2.amazonaws.com": {},
+		"https://187473451979.dkr.ecr.us-west-2.amazonaws.com": {}
+	},
+	"HttpHeaders": {
+		"User-Agent": "Docker-Client/17.09.0-ce (darwin)"
+	},
+	"credsStore": "osxkeychain",
+	"credHelpers": {
+		"187473451979.dkr.ecr.us-west-2.amazonaws.com": "ecr-login"
+	}
+}
