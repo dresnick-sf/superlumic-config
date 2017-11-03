@@ -19,6 +19,7 @@
         type: string
         value: bottom
   - osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+    notify: killall cfprefsd
     with_items:
       # Needed to enable iterm2 session restore
       - domain: 'Apple Global Domain'
@@ -42,8 +43,8 @@
       - domain: 'NSGlobalDomain'
         key: 'KeyRepeat'
         type: int
-        value: 1
+        value: 2
       - domain: 'NSGlobalDomain'
         key: 'InitialKeyRepeat'
         type: int
-        value: 10
+        value: 15

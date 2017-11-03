@@ -1,2 +1,4 @@
 - name: killall Dock
   command: killall Dock
+- name: killall cfprefsd
+  command: killall cfprefsd
