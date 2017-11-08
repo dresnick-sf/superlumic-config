@@ -13,6 +13,10 @@
   copy:
     src: "{{ checkout_path }}/bin/local/docker-credential-ecr-login"
     dest: "{{ folder_in_path }}"
+- name: ensure ~/.docker exists
+  file:
+    path: ~/.docker
+    state: directory
 - name: copy ~/.docker/config.json
   copy:
     src: config.json
