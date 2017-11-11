@@ -3,3 +3,8 @@
 - name: install and configure fzf
   include_tasks: fzf.yml
   tags: fzf
+- name: copy gitconfig
+  copy:
+    src: .gitconfig
+    dest: ~/.gitconfig
+    backup: yes
