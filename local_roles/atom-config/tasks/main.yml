@@ -4,7 +4,7 @@
   changed_when: false
 
 - name: apm upgrade all packages
-  command: 'apm upgrade'
+  command: 'apm upgrade --no-confirm'
   changed_when: false
   register: atom_upgrade_result
 
