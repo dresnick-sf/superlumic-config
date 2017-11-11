@@ -1,0 +1,9 @@
+[help]
+	format = html
+[status]
+	showUntrackedFiles = all
+[alias]
+	st = status
+[user]
+	name = David Resnick
+	email = dresnick@salesforce.com

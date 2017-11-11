@@ -4,6 +4,7 @@
   include_tasks: fzf.yml
   tags: fzf
 - name: copy gitconfig
+  tags: git
   copy:
     src: .gitconfig
     dest: ~/.gitconfig
