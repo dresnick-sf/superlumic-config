@@ -11,8 +11,6 @@
       with_items:
         - brew-cask-completion
         - ffmpeg
-        - fzf
-        - highlight
         - ripgrep
         - git
         - id3v2

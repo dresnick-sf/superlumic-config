@@ -1,0 +1,19 @@
+---
+
+- name: install fzf apps
+  homebrew: name={{item}} state=latest
+  with_items:
+    - fzf
+    - highlight
+# as described here: https://github.com/junegunn/fzf#settings
+- name: get script dependencies of fzf/ripgrep shell integration
+  get_url:
+    url: "https://gist.githubusercontent.com/junegunn/8c3796a965f22e6a803fe53096ad7a75/raw/f17be29dd99f4a3313e97f6493d2842fe461f5bb/{{ item }}"
+    dest: "~/bin/{{ item }}"
+    mode: u+wrx
+  with_items:
+    - with-dir
+    - only-dir
+- name: install fzf integrations
+  command: /usr/local/opt/fzf/install --all
+  changed_when: no
