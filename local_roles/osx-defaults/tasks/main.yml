@@ -1,50 +1,54 @@
-  - name: Configure Dock
-    osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
-    notify: killall Dock
-    with_items:
-      - domain: 'com.apple.dock'
-        key: 'autohide'
-        type: boolean
-        value: true
-      - domain: 'com.apple.dock'
-        key: 'minimize-to-application'
-        type: integer
-        value: 0
-      - domain: 'com.apple.dock'
-        key: 'show-process-indicators'
-        type: boolean
-        value: true
-      - domain: 'com.apple.dock'
-        key: 'orientation'
-        type: string
-        value: bottom
-  - osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
-    notify: killall cfprefsd
-    with_items:
-      # Needed to enable iterm2 session restore
-      - domain: 'Apple Global Domain'
-        key: 'NSQuitAlwaysKeepsWindows'
-        type: boolean
-        value: true
-      - domain: 'com.googlecode.iterm2'
-        key: 'OpenArrangementAtStartup'
-        type: boolean
-        value: false
-      - domain: 'com.googlecode.iterm2'
-        key: 'OpenNoWindowsAtStartup'
-        type: boolean
-        value: false
+---
+- name: configure iterm2
+  include_tasks: iterm2.yml
+  tags: iterm2
+- name: Configure Dock
+  osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+  notify: killall Dock
+  with_items:
+    - domain: 'com.apple.dock'
+      key: 'autohide'
+      type: boolean
+      value: true
+    - domain: 'com.apple.dock'
+      key: 'minimize-to-application'
+      type: integer
+      value: 0
+    - domain: 'com.apple.dock'
+      key: 'show-process-indicators'
+      type: boolean
+      value: true
+    - domain: 'com.apple.dock'
+      key: 'orientation'
+      type: string
+      value: bottom
+- osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+  notify: killall cfprefsd
+  with_items:
+    # Needed to enable iterm2 session restore
+    - domain: 'Apple Global Domain'
+      key: 'NSQuitAlwaysKeepsWindows'
+      type: boolean
+      value: true
+    - domain: 'com.googlecode.iterm2'
+      key: 'OpenArrangementAtStartup'
+      type: boolean
+      value: false
+    - domain: 'com.googlecode.iterm2'
+      key: 'OpenNoWindowsAtStartup'
+      type: boolean
+      value: false
 
-      - domain: 'Apple Global Domain'
-        key: 'AppleInterfaceStyle'
-        type: string
-        value: Dark
+    - domain: 'Apple Global Domain'
+      key: 'AppleInterfaceStyle'
+      type: string
+      value: Dark
 
-      - domain: 'NSGlobalDomain'
-        key: 'KeyRepeat'
-        type: int
-        value: 2
-      - domain: 'NSGlobalDomain'
-        key: 'InitialKeyRepeat'
-        type: int
-        value: 15
+    - domain: 'NSGlobalDomain'
+      key: 'KeyRepeat'
+      type: int
+      value: 2
+    - domain: 'NSGlobalDomain'
+      key: 'InitialKeyRepeat'
+      type: int
+      value: 15

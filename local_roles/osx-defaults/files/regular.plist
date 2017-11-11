@@ -1,0 +1,20 @@
+{
+  "Profiles": [
+    {
+      "Name": "Regular",
+      "Guid": "Regular",
+      "Session Close Undo Timeout": "30",
+      "Unlimited Scrollback": "true",
+      "Cursor Type": "2",
+      "Blur" : true,
+      "Custom Directory" : "Advanced",
+      "Minimum Contrast" : 0.3212767009493671,
+      "Normal Font" : "FiraCode-Retina 14",
+      "Columns" : 166,
+      "Rows" : 44,
+      "Custom Directory" : "Recycle",
+      "ASCII Ligatures" : true,
+      "Transparency" : 0.09692060596446701
+    }
+  ]
+}

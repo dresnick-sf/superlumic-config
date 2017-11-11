@@ -1,0 +1,72 @@
+---
+  - name: Verify ~/Library/Application Support/iTerm2/DynamicProfiles dir
+    file:
+      path: '~/Library/Application Support/iTerm2/DynamicProfiles'
+      state: directory
+  - name: Copy dynamic iterm2 profile
+    copy:
+      src: regular.plist
+      dest: '~/Library/Application Support/iTerm2/DynamicProfiles'
+      backup: yes
+
+  - name: Configure iterm2 defaults
+    osx_defaults: domain="com.googlecode.iterm2" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+    tags: iterm2
+    with_items:
+      - key: 'DimOnlyText'
+        type: boolean
+        value: true
+      - key: 'NoSyncNeverRemindPrefsChangesLostForFile'
+        type: boolean
+        value: true
+      - key: 'NoSyncNeverRemindPrefsChangesLostForFile_selection'
+        type: string
+        value: '0'
+      - key: 'NoSyncPermissionToShowTip'
+        type: boolean
+        value: true
+      - key: 'OnlyWhenMoreTabs'
+        type: boolean
+        value: false
+      - key: 'OpenArrangementAtStartup'
+        type: boolean
+        value: false
+      - key: 'OpenBookmark'
+        type: boolean
+        value: false
+      - key: 'OpenNoWindowsAtStartup'
+        type: boolean
+        value: false
+      - key: 'PasteTabToStringTabStopSize'
+        type: integer
+        value: 4
+      - key: 'PromptOnQuit'
+        type: boolean
+        value: false
+      - key: 'QuitWhenAllWindowsClosed'
+        type: boolean
+        value: false
+      - key: 'SUEnableAutomaticChecks'
+        type: boolean
+        value: true
+      - key: 'ShowFullScreenTabBar'
+        type: boolean
+        value: true
+      - key: 'SplitPaneDimmingAmount'
+        type: string
+        value: '0.54660957532051291'
+      - key: 'TabStyle'
+        type: string
+        value: '1'
+      - key: 'UseBorder'
+        type: boolean
+        value: true
+      - key: 'findIgnoreCase_iTerm'
+        type: boolean
+        value: true
+      - key: 'findMode_iTerm'
+        type: string
+        value: '0'
+      - key: 'findRegex_iTerm'
+        type: boolean
+        value: false
