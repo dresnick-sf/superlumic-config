@@ -31,9 +31,6 @@
       - key: 'ShowFullScreenTabBar'
         type: boolean
         value: true
-      - key: 'QuitWhenAllWindowsClosed'
-        type: boolean
-        value: true
       - key: 'UseBorder'
         type: boolean
         value: true
