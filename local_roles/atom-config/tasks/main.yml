@@ -28,11 +28,14 @@
     - language-groovy
     - language-jenkinsfile
     - linter
+    # - linter-ansible-syntax
+    # - linter-ansible-linting
     - linter-pylint
     - linter-shellcheck
     - linter-ui-default
     - minimap
     - minimap-highlight-selected
+    - minimap-linter
     - wakatime
 
 - name: Check if Atom is running
