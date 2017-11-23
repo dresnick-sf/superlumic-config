@@ -10,6 +10,11 @@
 
 - debug: var=atom_upgrade_result
 
+- name: install brew apps
+  homebrew: name={{item}} state=latest
+  with_items:
+    - shellcheck
+
 - name: 'apm install : install atom packages'
   include_tasks: install-if-missing.yml
   vars:
@@ -24,6 +29,7 @@
     - language-jenkinsfile
     - linter
     - linter-pylint
+    - linter-shellcheck
     - linter-ui-default
     - minimap
     - minimap-highlight-selected
