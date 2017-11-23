@@ -1,7 +1,7 @@
-- name: check if package is installed
+- name: "check if {{ package_name }} is installed"
   stat: path="~/.atom/packages/{{ package_name }}"
   register: package_folder
 
-- name: 'apm install packages'
+- name: "apm install {{ package_name }}"
   command: 'apm install {{ package_name }}'
   when: not package_folder.stat.exists
