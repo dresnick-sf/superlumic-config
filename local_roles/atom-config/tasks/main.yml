@@ -16,10 +16,15 @@
     package_name: "{{ item }}"
   with_items:
     - atom-python-test
+    - busy-signal
     - highlight-selected
+    - intentions
     - language-docker
     - language-groovy
     - language-jenkinsfile
+    - linter
+    - linter-pylint
+    - linter-ui-default
     - minimap
     - minimap-highlight-selected
     - wakatime

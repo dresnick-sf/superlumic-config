@@ -12,6 +12,9 @@
     showInvisibles: true
   "exception-reporting":
     userId: "ae354864-2c4d-4511-b076-1118d095109a"
+  "linter-pylint":
+    rcFile: "/Users/dresnick/src/proj/implisit/PyTools/pylintrc-wall"
+  "linter-ui-default": {}
   minimap:
     plugins:
       "highlight-selected": true
