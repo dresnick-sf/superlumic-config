@@ -44,6 +44,7 @@
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
   roles:
+    - { role: zsh, tags: zsh }
     - { role: osx-defaults, tags: osx-defaults }
     - { role: scheduled-pmset, tags: scheduled-pmset }
     - { role: various, tags: various }

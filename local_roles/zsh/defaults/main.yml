@@ -1,0 +1,5 @@
+---
+
+zprezto_repo_url: "git@github.com:dresnick-sf/prezto.git"
+zdotdir: "/Users/{{ ansible_user }}"
+zprezto_dir: "{{ zdotdir }}/.zprezto"

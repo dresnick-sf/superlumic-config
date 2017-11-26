@@ -1,0 +1,41 @@
+---
+
+- name: install zsh
+  homebrew:
+    name: zsh
+    state: latest
+- name: get fork of zprezto
+  git:
+    repo: "{{ zprezto_repo_url }}"
+    recursive: yes
+    dest: "{{ zprezto_dir }}"
+- name: create links to zsh rcfiles
+  file:
+    src: "{{ zprezto_dir }}/runcoms/{{ item }}"
+    dest: "{{ zdotdir }}/.{{ item }}"
+    state: link
+  with_items:
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zprofile
+    - zshenv
+    - zshrc
+- name: set current shell to zsh
+  become: yes
+  command: "dscl . -create /Users/{{ ansible_user }} UserShell /usr/local/bin/zsh"
+  register: dscl
+- debug: var=dscl
+- name: check for insecure directories in the zsh fpath
+  command: /usr/local/bin/zsh -c 'source /usr/local/share/zsh/functions/compaudit'
+  register: compaudit
+  ignore_errors: yes
+  changed_when: no
+- debug: var=compaudit
+- name: Fix compaudit errors
+  file:
+    path: "{{ item }}"
+    mode: "g-w"
+    owner: "{{ ansible_user }}"
+    group: "admin"
+  with_items: "{{ compaudit.stdout_lines }}"
