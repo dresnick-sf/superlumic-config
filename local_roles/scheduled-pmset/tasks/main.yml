@@ -7,5 +7,5 @@
   register: pmset_loaded_result
 
 - name: launch pmset
-  shell: launchctl load ~/Library/LaunchAgents/pmset.dresnick.salesforce.com.plist
-  when: "'pmset.dresnick.salesforce.com' not in pmset_loaded_result.stdout"
+  shell: launchctl bootstrap gui/1451812232 ~/Library/LaunchAgents/pmset.dresnick.salesforce.com.plist
+  # when: "'pmset.dresnick.salesforce.com' not in pmset_loaded_result.stdout"
