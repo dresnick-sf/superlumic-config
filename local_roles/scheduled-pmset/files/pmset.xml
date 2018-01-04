@@ -14,7 +14,7 @@
 			<string>/usr/bin/pmset</string>
 			<string>-c</string>
 			<string>displaysleep</string>
-			<string>91</string>
+			<string>420</string>
 		</array>
 		<key>StartInterval</key>
 		<integer>600</integer>

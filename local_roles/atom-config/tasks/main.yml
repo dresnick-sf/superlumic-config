@@ -20,6 +20,7 @@
   vars:
     package_name: "{{ item }}"
   with_items:
+    - atom-beautify
     - atom-python-test
     - busy-signal
     - highlight-selected
@@ -36,6 +37,7 @@
     - minimap
     - minimap-highlight-selected
     - minimap-linter
+    - pretty-json
     - wakatime
 
 - name: Check if Atom is running
