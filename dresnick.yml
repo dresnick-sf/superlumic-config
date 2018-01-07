@@ -2,36 +2,37 @@
 
 - hosts: localhost
   connection: local
-
-  tasks:
-    - homebrew_tap:
-        name: caskroom/fonts
-    - name: install brew apps
-      homebrew: name={{item}} state=latest
-      with_items:
-        - brew-cask-completion
-        - ffmpeg
-        - ripgrep
-        - git
-        - id3v2
-        - jq
-        - the_silver_searcher
-        - watch
-        - zsh
-    - name: install personal cask applications
-      homebrew_cask: name={{item}} state=present
-      with_items:
-        - android-file-transfer
-        - atom
-        - iterm2
-        - font-fira-code
-        - google-play-music-desktop-player
-        - music-manager
-        - skitch
-        - slack
-        - spectacle
-        - studio-3t
-        - whatsapp
+  vars:
+    homebrew_taps:
+      - homebrew/core
+      - caskroom/cask
+      - caskroom/fonts
+    homebrew_installed_packages:
+      - brew-cask-completion
+      - ffmpeg
+      - ripgrep
+      - git
+      - id3v2
+      - jq
+      - the_silver_searcher
+      - watch
+      - zsh
+    homebrew_cask_apps:
+      - android-file-transfer
+      - atom
+      - iterm2
+      - font-fira-code
+      - google-play-music-desktop-player
+      - music-manager
+      - skitch
+      - slack
+      - spectacle
+      - studio-3t
+      - whatsapp
+  pre_tasks:
+    - import_role:
+        name: ansible-role-homebrew
+      tags: homebrew
     - name: add to sudoers without password
       become: yes
       lineinfile: >
