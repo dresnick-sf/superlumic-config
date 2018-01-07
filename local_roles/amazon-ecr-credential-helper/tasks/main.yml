@@ -1,5 +1,8 @@
 ---
 
+- name: docker | Install docker with brew cask
+  homebrew_cask:
+    name: docker
 - name: get amazon-ecr-credential-helper git repo
   git:
     repo: 'https://github.com/awslabs/amazon-ecr-credential-helper.git'
