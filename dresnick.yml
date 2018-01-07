@@ -52,6 +52,7 @@
   roles:
     - { role: zsh, tags: zsh }
     - { role: osx-defaults, tags: osx-defaults }
+    - { role: iterm2, tags: iterm2 }
     - { role: scheduled-pmset, tags: scheduled-pmset }
     - { role: various, tags: various }
     - { role: amazon-ecr-credential-helper, tags: amazon-ecr-credential-helper }

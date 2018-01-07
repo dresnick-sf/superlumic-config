@@ -11,7 +11,6 @@
 
   - name: Configure iterm2 defaults
     osx_defaults: domain="com.googlecode.iterm2" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
-    tags: iterm2
     with_items:
       - key: 'Default Bookmark Guid'
         type: string
@@ -35,5 +34,11 @@
         type: boolean
         value: true
       - key: 'HideTab'
+        type: boolean
+        value: false
+      - key: 'OpenArrangementAtStartup'
+        type: boolean
+        value: false
+      - key: 'OpenNoWindowsAtStartup'
         type: boolean
         value: false
