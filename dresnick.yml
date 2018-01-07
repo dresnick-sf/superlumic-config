@@ -29,10 +29,15 @@
       - spectacle
       - studio-3t
       - whatsapp
+    folder_in_path: ~/bin
   pre_tasks:
     - import_role:
         name: ansible-role-homebrew
       tags: homebrew
+    - name: create ~/bin
+      file:
+        path: "{{ folder_in_path }}"
+        state: directory
     - name: add to sudoers without password
       become: yes
       lineinfile: >
