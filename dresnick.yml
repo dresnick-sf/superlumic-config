@@ -10,19 +10,20 @@
     homebrew_installed_packages:
       - brew-cask-completion
       - ffmpeg
-      - ripgrep
       - git
       - id3v2
       - jq
+      - ripgrep
       - the_silver_searcher
+      - tmux
       - watch
       - zsh
     homebrew_cask_apps:
       - android-file-transfer
       - atom
-      - iterm2
       - font-fira-code
       - google-play-music-desktop-player
+      - iterm2
       - music-manager
       - skitch
       - slack
