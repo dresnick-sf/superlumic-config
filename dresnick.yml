@@ -8,11 +8,14 @@
       - caskroom/cask
       - caskroom/fonts
     homebrew_installed_packages:
+      - awscli
       - brew-cask-completion
       - ffmpeg
       - git
       - id3v2
       - jq
+      - openssh
+      - python
       - ripgrep
       - the_silver_searcher
       - tmux
@@ -21,13 +24,10 @@
     homebrew_cask_apps:
       - android-file-transfer
       - atom
-      - awscli
       - font-fira-code
       - google-play-music-desktop-player
       - iterm2
       - music-manager
-      - openssh
-      - python
       - skitch
       - slack
       - spectacle
