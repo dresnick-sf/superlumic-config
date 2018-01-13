@@ -2,3 +2,5 @@
   command: killall Dock
 - name: killall cfprefsd
   command: killall cfprefsd
+- name: killall SystemUIServer
+  command: killall SystemUIServer
