@@ -20,6 +20,8 @@
   vars:
     package_name: "{{ item }}"
   with_items:
+    # - linter-ansible-linting
+    # - linter-ansible-syntax
     - atom-beautify
     - atom-python-test
     - busy-signal
@@ -29,8 +31,6 @@
     - language-groovy
     - language-jenkinsfile
     - linter
-    # - linter-ansible-syntax
-    # - linter-ansible-linting
     - linter-pylint
     - linter-shellcheck
     - linter-ui-default
@@ -38,6 +38,7 @@
     - minimap-highlight-selected
     - minimap-linter
     - pretty-json
+    - sort-all-the-things
     - wakatime
 
 - name: Check if Atom is running
