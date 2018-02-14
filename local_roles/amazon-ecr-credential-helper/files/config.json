@@ -8,6 +8,7 @@
 	},
 	"credsStore": "osxkeychain",
 	"credHelpers": {
-		"187473451979.dkr.ecr.us-west-2.amazonaws.com": "ecr-login"
+		"187473451979.dkr.ecr.us-west-2.amazonaws.com": "ecr-login",
+		"https://187473451979.dkr.ecr.us-west-2.amazonaws.com": "ecr-login"
 	}
 }
