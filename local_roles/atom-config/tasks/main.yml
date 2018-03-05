@@ -24,6 +24,7 @@
     # - linter-ansible-syntax
     - atom-beautify
     - atom-python-test
+    - better-git-blame
     - busy-signal
     - highlight-selected
     - intentions
