@@ -16,6 +16,7 @@
       - jq
       - openssh
       - python
+      - python@2
       - ripgrep
       - the_silver_searcher
       - tmux
@@ -53,9 +54,21 @@
       with_items:
         - { regexp: '^dresnick', line: 'dresnick ALL=(ALL) NOPASSWD: ALL' }
         - { regexp: '^Defaults    verifypw = any', line: 'Defaults    verifypw = any' }
-    - name: add python packages
+    - name: add python 3 packages
       pip:
+        executable: pip3
         name: virtualenv
+    - name: add python 2 packages
+      pip:
+        executable: pip2
+        name: virtualenv
+    - name: Put link to pip2 in path
+      file:
+        src: "/usr/local/opt/python@2/bin/pip2"
+        dest: "/Users/dresnick/bin/pip2"
+        state: link
+      tags: asdf
+
   roles:
     - { role: zsh, tags: zsh }
     - { role: osx-defaults, tags: osx-defaults }
