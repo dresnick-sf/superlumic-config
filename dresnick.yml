@@ -11,6 +11,7 @@
       - awscli
       - brew-cask-completion
       - ffmpeg
+      - fortune
       - git
       - id3v2
       - jq

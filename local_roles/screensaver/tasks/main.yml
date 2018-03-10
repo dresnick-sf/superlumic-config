@@ -7,6 +7,10 @@
 - name: configure RandomExtra screensaver
   import_tasks: configure-random-extra.yml
 
+- name: configure xscreensaver
+  import_tasks: configure-xscreensaver.yml
+  tags: xscreensaver
+
 - name: Set RandomExtra as screensaver
   shell: |
     defaults write com.apple.screensaver askForPassword 1

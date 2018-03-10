@@ -1,0 +1,25 @@
+- name: have photo based screensavers use images from ~/Pictures, not a desktop image grab
+  shell: |
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} chooseRandomImages 1
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} grabDesktopImages 0
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} imageDirectory ~/Pictures/davidrefood
+  with_items:
+    - BlitSpin
+    - DecayScreen
+    - Distort
+    - RotZoomer
+    - SlideScreen
+    - Spotlight
+    - Twang
+    - Zoom
+
+- name: have text based screensavers wikipedia URL instead of system info
+  shell: |
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} textMode program
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} textProgram fortune
+  with_items:
+    - FlipText
+    - FontGlide
+    - Phosphor
+    - SplitFlap
+    - StarWars
