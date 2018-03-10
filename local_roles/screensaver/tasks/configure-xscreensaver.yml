@@ -16,7 +16,7 @@
 - name: have text based screensavers wikipedia URL instead of system info
   shell: |
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} textMode program
-    defaults -currentHost write org.jwz.xscreensaver.{{ item }} textProgram fortune
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} textProgram /usr/local/bin/fortune
   with_items:
     - FlipText
     - FontGlide
