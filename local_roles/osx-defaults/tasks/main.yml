@@ -90,3 +90,14 @@
       key: 'DateFormat'
       type: string
       value: 'EEE d MMM  H:mm:ss'
+
+- osx_defaults: domain="{{ item.domain }}" key="{{ item.key }}" type="{{ item.type }}" value="{{ item.value }}" state=present
+  with_items:
+    - domain: 'com.google.Chrome'
+      key: 'AppleEnableSwipeNavigateWithScrolls'
+      type: boolean
+      value: false
+    - domain: 'com.google.Chrome.canary'
+      key: 'AppleEnableSwipeNavigateWithScrolls'
+      type: boolean
+      value: false

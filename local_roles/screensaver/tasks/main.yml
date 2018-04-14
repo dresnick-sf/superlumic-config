@@ -9,7 +9,6 @@
 
 - name: configure xscreensaver
   import_tasks: configure-xscreensaver.yml
-  tags: xscreensaver
 
 - name: Set RandomExtra as screensaver
   shell: |

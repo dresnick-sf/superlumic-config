@@ -13,3 +13,4 @@ screensaver_active:
   WindupRobot: 'false'
   screensaver.shuffle: 'false'
   "iTunes Artwork": 'false'
+  FloatingMessage: 'false'

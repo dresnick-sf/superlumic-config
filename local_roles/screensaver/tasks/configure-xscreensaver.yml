@@ -7,9 +7,15 @@
     - BlitSpin
     - DecayScreen
     - Distort
+    - FlipScreen3D
+    - GFlux
+    - MirrorBlob
+    - Ripples
     - RotZoomer
     - SlideScreen
+    - Slip
     - Spotlight
+    - Tessellimage
     - Twang
     - Zoom
 

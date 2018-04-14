@@ -12,6 +12,8 @@
       "Normal Font" : "FiraCode-Retina 14",
       "Columns" : 166,
       "Rows" : 44,
+      "Visual Bell" : 1,
+      "Silence Bell" : 1,
       "Custom Directory" : "Recycle",
       "ASCII Ligatures" : true,
       "Transparency" : 0.09692060596446701

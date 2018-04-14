@@ -3,9 +3,9 @@
   # - src: git@git.soma.salesforce.com:dresnick/superlumic-role-implisit-dev.git
   #   scm: git
   #   name: implisit-dev
-  # - src: https://github.com/elliotweiser/ansible-osx-command-line-tools.git
-  #   scm: git
-  #   name: ansible-osx-command-line-tools
+  - src: https://github.com/elliotweiser/ansible-osx-command-line-tools.git
+    scm: git
+    name: ansible-osx-command-line-tools
   - src: https://github.com/geerlingguy/ansible-role-homebrew.git
     scm: git
     name: ansible-role-homebrew
