@@ -4,11 +4,13 @@
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} grabDesktopImages 0
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} imageDirectory ~/Pictures/davidrefood
   with_items:
+    - AntSpotlight
     - BlitSpin
     - DecayScreen
     - Distort
     - FlipScreen3D
     - GFlux
+    - Gleidescope
     - MirrorBlob
     - Ripples
     - RotZoomer
