@@ -13,6 +13,7 @@
       - ffmpeg
       - fortune
       - git
+      - graphviz
       - id3v2
       - jq
       - openssh

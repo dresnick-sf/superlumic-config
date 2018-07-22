@@ -6,6 +6,7 @@
   with_items:
     - AntSpotlight
     - BlitSpin
+    - Bumps
     - DecayScreen
     - Distort
     - FlipScreen3D
@@ -21,13 +22,13 @@
     - Twang
     - Zoom
 
-- name: have text based screensavers wikipedia URL instead of system info
+- name: have text based screensavers use `fortune` instead of system info
   shell: |
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} textMode program
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} textProgram /usr/local/bin/fortune
   with_items:
     - FlipText
     - FontGlide
-    - Phosphor
+    # - Phosphor
     - SplitFlap
     - StarWars
