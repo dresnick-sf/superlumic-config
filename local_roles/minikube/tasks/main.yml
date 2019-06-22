@@ -1,0 +1,21 @@
+
+# instructions here: https://github.com/kubernetes/minikube/blob/master/docs/drivers.md#hyperkit-driver
+
+- name: install minikube and hyperkit
+  include_role:
+    name: ansible-role-homebrew
+  vars:
+    homebrew_cask_apps:
+      - minikube
+    homebrew_installed_packages:
+      - hyperkit
+- name: install the most recent version of minikube's fork of the hyperkit driver
+  become: yes
+  get_url:
+    url: https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-hyperkit
+    dest: /usr/local/bin/docker-machine-driver-hyperkit
+    mode: '4755'
+    owner: root
+    group: wheel
+- name: set hyperkit as default minikube driver
+  command: minikube config set vm-driver hyperkit
