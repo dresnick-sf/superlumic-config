@@ -8,32 +8,56 @@
       - caskroom/cask
       - caskroom/fonts
     homebrew_installed_packages:
-      - awscli
+      - asciidoc
+      - autossh
+      - bash
       - brew-cask-completion
+      - dos2unix
       - ffmpeg
       - fortune
+      - fswatch
       - git
       - graphviz
+      - grep
+      - groovy
       - id3v2
       - jq
+      - kubectx
+      - lastpass-cli
       - openssh
-      - python
+      - pstree
+      - pyenv
       - ripgrep
+      - socat
+      - telnet
       - the_silver_searcher
       - tmux
+      - tree
       - watch
-      - zsh
+      - wget
+      - youtube-dl
     homebrew_cask_apps:
       - android-file-transfer
       - atom
+      - background-music
+      - daisydisk
+      - disk-inventory-x
       - font-fira-code
-      - google-play-music-desktop-player
+      - google-backup-and-sync
       - iterm2
+      - meld
       - music-manager
+      - musicbrainz-picard
+      - pluralsight
+      - postman
       - skitch
       - slack
+      - sloth
       - spectacle
       - studio-3t
+      - sweet-home3d
+      - visual-studio-code
+      - vlc
       - whatsapp
     folder_in_path: ~/bin
   pre_tasks:
