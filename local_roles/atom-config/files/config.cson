@@ -1,24 +1,38 @@
 "*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "beb250fc-40b7-4452-a8e0-f532c36e1544"
   "atom-python-test":
     outputColored: true
   "autocomplete-plus":
     confirmCompletion: "tab always, enter when suggestion explicitly selected"
+  "better-git-blame":
+    searchInLayerEnabled: false
   core:
     allowPendingPaneItems: false
     closeDeletedFileTabs: true
     telemetryConsent: "limited"
   editor:
     fontFamily: "FiraCode-Retina"
+    fontSize: 17
     preferredLineLength: 100
     showIndentGuide: true
     showInvisibles: true
-    tabType: "hard"
+    tabLength: 4
   "exception-reporting":
     userId: "ae354864-2c4d-4511-b076-1118d095109a"
-  linter: {}
+  "fuzzy-finder": {}
+  "incremental-search":
+    instantSearch: true
+    landAtPointInsteadOfRange: true
+  linter:
+    disabledProviders: [
+      "Pylint"
+    ]
   "linter-pylint":
     rcFile: "/Users/dresnick/src/proj/implisit/PyTools/pylintrc-wall"
-  "linter-ui-default": {}
+  "linter-ui-default":
+    showPanel: true
   minimap:
     plugins:
       "highlight-selected": true
@@ -27,7 +41,5 @@
       linterDecorationsZIndex: 0
   "tree-view":
     hideVcsIgnoredFiles: true
-  wakatime:
-    apikey: "Saved in your ~/.wakatime.cfg file"
   welcome:
     showOnStartup: false

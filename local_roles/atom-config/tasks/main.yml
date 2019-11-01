@@ -20,8 +20,7 @@
   vars:
     package_name: "{{ item }}"
   with_items:
-    # - linter-ansible-linting
-    # - linter-ansible-syntax
+    - TabNine
     - atom-beautify
     - atom-python-test
     - better-git-blame
@@ -39,8 +38,9 @@
     - minimap-highlight-selected
     - minimap-linter
     - pretty-json
+    - python-debugger
     - sort-all-the-things
-    - wakatime
+    - split-diff
 
 - name: Check if Atom is running
   shell: ps -ef | grep atom | grep -v grep
