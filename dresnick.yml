@@ -42,7 +42,7 @@
       - background-music
       - daisydisk
       - disk-inventory-x
-      - font-fira-code
+      - caskroom/fonts/font-fira-code
       - google-backup-and-sync
       - iterm2
       - meld
