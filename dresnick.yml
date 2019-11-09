@@ -81,7 +81,10 @@
     - name: add python 3 packages
       pip:
         executable: pip3
-        name: virtualenv
+        name: item
+      with_items:
+          - virtualenv
+          - instagram-scraper
     # - name: add python 2 packages
     #   pip:
     #     executable: pip2
@@ -102,5 +105,5 @@
     - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }
-    - { role: minikube, tags: minikube }
-#    - { role: implisit-dev, tags: implisit-dev }
+    # - { role: minikube, tags: minikube }
+    # - { role: superlumic-role-implisit-dev, tags: implisit-dev }
