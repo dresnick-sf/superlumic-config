@@ -19,7 +19,6 @@
       - git
       - graphviz
       - grep
-      - groovy
       - id3v2
       - jq
       - kubectx
@@ -42,8 +41,8 @@
       - background-music
       - daisydisk
       - disk-inventory-x
-      - caskroom/fonts/font-fira-code
-      - google-backup-and-sync
+      - homebrew/cask-fonts/font-fira-code
+#      - google-backup-and-sync
       - iterm2
       - meld
       - music-manager
@@ -104,4 +103,4 @@
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }
     - { role: minikube, tags: minikube }
-    - { role: implisit-dev, tags: implisit-dev }
+#    - { role: implisit-dev, tags: implisit-dev }
