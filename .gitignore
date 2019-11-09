@@ -1,4 +1,5 @@
 .DS_Store
 *.retry
 *.pyc
-roles/
+roles/ansible-role-homebrew
+roles/elliotweiser.osx-command-line-tools
