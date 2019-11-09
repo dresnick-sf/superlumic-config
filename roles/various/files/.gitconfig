@@ -1,5 +1,6 @@
 [help]
 	format = html
+	autocorrect = 30
 [status]
 	showUntrackedFiles = all
 [alias]
