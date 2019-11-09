@@ -14,17 +14,18 @@
   file:
     path: ~/src/proj
     state: directory
+
 - name: get various-scripts
   tags: git
   git:
     repo: 'git@github.com:david-resnick/various-scripts.git'
     dest: ~/src/proj/various-scripts
-- name: set abunetta email for repo
+- name: set abunetta email for various-scripts repo
   tags: git
   command: git config user.email "abunetta@gmail.com"
   args:
     chdir: ~/src/proj/various-scripts
-- name: set abunetta key for repo
+- name: set abunetta key for various-scripts repo
   tags: git
   command: git config core.sshCommand "ssh -i ~/.ssh/abunetta.pem -F /dev/null"
   args:
@@ -36,3 +37,12 @@
       dest: "~/bin/{{ item | basename }}"
       state: link
   loop: "{{ lookup('fileglob', '~/src/proj/various-scripts/*', wantlist=True) }}"
+
+- name: update superlumic-config repo
+  tags: git
+  command: "{{ item }}"
+  args:
+    chdir: /usr/local/superlumic/config
+  loop:
+    - git remote set-url origin git@github.com:dresnick-sf/superlumic-config
+    - git remote add upstream https://github.com/superlumic/superlumic-config.git

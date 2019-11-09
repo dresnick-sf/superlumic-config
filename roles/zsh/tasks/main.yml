@@ -9,6 +9,14 @@
     repo: "{{ zprezto_repo_url }}"
     recursive: yes
     dest: "{{ zprezto_dir }}"
+- name: update superlumic-config repo
+  tags: git
+  command: "{{ item }}"
+  args:
+    chdir: "{{ zprezto_dir }}"
+  loop:
+    - git remote set-url origin git@github.com:dresnick-sf/prezto
+    - git remote add upstream https://github.com/sorin-ionescu/prezto.git
 - name: create links to zsh rcfiles
   file:
     src: "{{ zprezto_dir }}/runcoms/{{ item }}"
