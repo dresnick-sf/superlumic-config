@@ -82,7 +82,10 @@
     - name: add python 3 packages
       pip:
         executable: pip3
-        name: virtualenv
+        name: item
+      with_items:
+          - virtualenv
+          - instagram-scraper
     # - name: add python 2 packages
     #   pip:
     #     executable: pip2
