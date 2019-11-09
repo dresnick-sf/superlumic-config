@@ -9,3 +9,30 @@
     src: .gitconfig
     dest: ~/.gitconfig
     backup: yes
+- name: create ~/src/proj
+  tags: git
+  file:
+    path: ~/src/proj
+    state: directory
+- name: get various-scripts
+  tags: git
+  git:
+    repo: 'git@github.com:david-resnick/various-scripts.git'
+    dest: ~/src/proj/various-scripts
+- name: set abunetta email for repo
+  tags: git
+  command: git config user.email "abunetta@gmail.com"
+  args:
+    chdir: ~/src/proj/various-scripts
+- name: set abunetta key for repo
+  tags: git
+  command: git config core.sshCommand "ssh -i ~/.ssh/abunetta.pem -F /dev/null"
+  args:
+    chdir: ~/src/proj/various-scripts
+- name: add links for scripts
+  tags: git
+  file:
+      src: "{{ item }}"
+      dest: "~/bin/{{ item | basename }}"
+      state: link
+  loop: "{{ lookup('fileglob', '~/src/proj/various-scripts/*', wantlist=True) }}"
