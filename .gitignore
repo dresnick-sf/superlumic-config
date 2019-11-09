@@ -3,3 +3,4 @@
 *.pyc
 roles/ansible-role-homebrew
 roles/elliotweiser.osx-command-line-tools
+roles/superlumic-role-implisit-dev
