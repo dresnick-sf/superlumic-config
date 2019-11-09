@@ -106,6 +106,5 @@
     - { role: atom-config, tags: atom-config }
     - { role: screensaver, tags: screensaver }
     - { role: ipython, tags: ipython }
-    - { role: minikube, tags: minikube }
-    - { role: implisit-dev, tags: implisit-dev }
+    # - { role: minikube, tags: minikube }
     # - { role: superlumic-role-implisit-dev, tags: implisit-dev }
