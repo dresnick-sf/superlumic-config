@@ -42,3 +42,8 @@
       - key: 'OpenNoWindowsAtStartup'
         type: boolean
         value: false
+
+  - name: Copy shell integration script
+    copy:
+      src: iterm2_shell_integration.zsh
+      dest: '~/.iterm2_shell_integration.zsh'
