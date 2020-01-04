@@ -9,14 +9,21 @@
     repo: "{{ zprezto_repo_url }}"
     recursive: yes
     dest: "{{ zprezto_dir }}"
-- name: update superlumic-config repo
+
+- name: update zprezto repo - git remote set-url origin
   tags: git
-  command: "{{ item }}"
+  command: "git remote set-url origin git@github.com:dresnick-sf/prezto"
   args:
     chdir: "{{ zprezto_dir }}"
-  loop:
-    - git remote set-url origin git@github.com:dresnick-sf/prezto
-    - git remote add upstream https://github.com/sorin-ionescu/prezto.git
+
+- name: update zprezto repo - git remote add upstream
+  tags: git
+  command: "git remote add upstream https://github.com/sorin-ionescu/prezto.git"
+  register: gitresult
+  args:
+    chdir: "{{ zprezto_dir }}"
+  failed_when: "gitresult.rc != 0 and gitresult.stderr != 'fatal: remote upstream already exists.'"
+
 - name: create links to zsh rcfiles
   file:
     src: "{{ zprezto_dir }}/runcoms/{{ item }}"

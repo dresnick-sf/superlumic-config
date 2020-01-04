@@ -38,11 +38,16 @@
       state: link
   loop: "{{ lookup('fileglob', '~/src/proj/various-scripts/*', wantlist=True) }}"
 
-- name: update superlumic-config repo
+- name: update superlumic-config repo - git remote set-url origin
   tags: git
-  command: "{{ item }}"
+  command: "git remote set-url origin git@github.com:dresnick-sf/superlumic-config"
   args:
     chdir: /usr/local/superlumic/config
-  loop:
-    - git remote set-url origin git@github.com:dresnick-sf/superlumic-config
-    - git remote add upstream https://github.com/superlumic/superlumic-config.git
+
+- name: update superlumic-config repo - git remote add upstream
+  tags: git
+  command: "git remote add upstream https://github.com/superlumic/superlumic-config.git"
+  register: gitresult
+  args:
+    chdir: /usr/local/superlumic/config
+  failed_when: "gitresult.rc != 0 and gitresult.stderr != 'fatal: remote upstream already exists.'"
