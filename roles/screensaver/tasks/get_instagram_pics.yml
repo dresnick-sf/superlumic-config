@@ -1,0 +1,24 @@
+- name: remove previous instagram pics (if any)
+  file:
+    path: "{{ ss_pics_dir }}"
+    state: absent
+- name: create pics dir
+  file:
+    path: "{{ ss_pics_dir }}"
+    state: directory
+- name: download latest 50 pictures
+  command: >-
+      instagram-scraper
+      --destination {{ ss_pics_dir }}
+      --maximum 50
+      --media-types=image
+      --template="{datetime}"
+      davidrefood
+  register: result
+- debug:
+    var: result
+    verbosity: 2
+- name: remove profile pic (it's old)
+  file:
+    path: "{{ ss_pics_dir }}/20101006 02h00m00s.jpg"
+    state: absent

@@ -1,4 +1,4 @@
-- name: have photo based screensavers use images from ~/Pictures, not a desktop image grab
+- name: Have photo based screensavers use images from {{ ss_pics_dir }}, not a desktop image grab
   shell: |
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} chooseRandomImages 1
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} grabDesktopImages 0
