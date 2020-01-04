@@ -4,10 +4,14 @@
   include_role:
     name: markosamuli.pyenv
   vars:
-    # install using homebrew
-    # pyenv_install_from_package_manager: false
     pyenv_python3_version: "3.6.9"
     pyenv_global: "{{ pyenv_python3_version }}"
+
+- name: add python 3 packages
+  pip:
+    executable: pip3
+    name:
+      - instagram-scraper
 
 - name: "ipython: Ensure default profile folder exists"
   file:
