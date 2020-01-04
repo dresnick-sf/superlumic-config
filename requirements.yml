@@ -3,3 +3,7 @@
   - src: https://github.com/geerlingguy/ansible-role-homebrew.git
     scm: git
     name: ansible-role-homebrew
+
+  - src: https://github.com/markosamuli/ansible-pyenv.git
+    scm: git
+    name: markosamuli.pyenv

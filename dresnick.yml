@@ -85,17 +85,9 @@
       with_items:
           - virtualenv
           - instagram-scraper
-    # - name: add python 2 packages
-    #   pip:
-    #     executable: pip2
-    #     name: virtualenv
-    # - name: Put link to pip2 in path
-    #   file:
-    #     src: "/usr/local/opt/python@2/bin/pip2"
-    #     dest: "/Users/dresnick/bin/pip2"
-    #     state: link
 
   roles:
+    - { role: python, tags: python }
     - { role: zsh, tags: zsh }
     - { role: osx-defaults, tags: osx-defaults }
     - { role: iterm2, tags: iterm2 }

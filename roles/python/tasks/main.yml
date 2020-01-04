@@ -1,0 +1,20 @@
+---
+
+- name: install pyenv
+  include_role:
+    name: markosamuli.pyenv
+  vars:
+    # install using homebrew
+    # pyenv_install_from_package_manager: false
+    pyenv_python3_version: "3.6.9"
+    pyenv_global: "{{ pyenv_python3_version }}"
+
+- name: "ipython: Ensure default profile folder exists"
+  file:
+    path: ~/.ipython/profile_default
+    state: directory
+
+- name: "ipython: Copy ipython config to default profile"
+  copy:
+    src: ipython_config.py
+    dest: ~/.ipython/profile_default
