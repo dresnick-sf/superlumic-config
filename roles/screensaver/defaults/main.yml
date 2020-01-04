@@ -14,3 +14,5 @@ screensaver_active:
   screensaver.shuffle: 'false'
   "iTunes Artwork": 'false'
   FloatingMessage: 'false'
+
+ss_pics_dir: ~/Pictures/screensaver

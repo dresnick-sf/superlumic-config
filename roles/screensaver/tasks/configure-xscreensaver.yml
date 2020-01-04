@@ -2,7 +2,7 @@
   shell: |
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} chooseRandomImages 1
     defaults -currentHost write org.jwz.xscreensaver.{{ item }} grabDesktopImages 0
-    defaults -currentHost write org.jwz.xscreensaver.{{ item }} imageDirectory ~/Pictures/davidrefood
+    defaults -currentHost write org.jwz.xscreensaver.{{ item }} imageDirectory {{ ss_pics_dir }}
   with_items:
     - AntSpotlight
     - BlitSpin
