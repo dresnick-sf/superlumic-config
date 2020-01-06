@@ -8,3 +8,5 @@
 [user]
 	name = David Resnick
 	email = dresnick@salesforce.com
+[remote "origin"]
+	prune = true
