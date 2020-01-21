@@ -10,3 +10,5 @@
 	email = dresnick@salesforce.com
 [remote "origin"]
 	prune = true
+[submodule]
+	recurse = true
