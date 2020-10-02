@@ -39,7 +39,11 @@
       "highlight-selectedDecorationsZIndex": 0
       linter: true
       linterDecorationsZIndex: 0
+  "python-black":
+    fmtOnSave: false
+    showErrors: "flash"
   "tree-view":
     hideVcsIgnoredFiles: true
   welcome:
     showOnStartup: false
+  whitespace: {}
