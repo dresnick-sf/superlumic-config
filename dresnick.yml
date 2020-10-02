@@ -4,51 +4,83 @@
   connection: local
   vars:
     homebrew_taps:
-      - homebrew/core
+      - github/gh
+      - hashicorp/tap
       - homebrew/cask
       - homebrew/cask-fonts
+      - homebrew/core
+      - homebrew/services
+      - kudulab/dojo-osx
+      - rhyeal/aws-rotate-iam-keys
+      - salesforce/policy_sentry
     homebrew_installed_packages:
       - asciidoc
       - autossh
+      - rhyeal/aws-rotate-iam-keys/aws-rotate-iam-keys
       - bash
       - brew-cask-completion
       - dos2unix
-      - ffmpeg
+      - folly
       - fortune
       - fswatch
+      - fzf
+      - gh
       - git
       - git-delta
+      - git-gui
+      - gradle
       - graphviz
       - grep
+      - helm
+      - highlight
       - id3v2
       - jq
+      - iproute2mac
       - kubectx
       - lastpass-cli
+      - maven
+      - oath-toolkit
+      - opencv
       - openssh
+      - salesforce/policy_sentry/policy_sentry
       - pstree
+      - pyenv-virtualenv
       - ripgrep
+      - shellcheck
       - socat
       - telnet
+      - terraform
+      - tflint
       - the_silver_searcher
       - tmux
       - tree
       - watch
       - wget
       - youtube-dl
+      - yq
+      - zlib
+      - zsh
     homebrew_cask_apps:
+      - aerial
       - android-file-transfer
       - atom
-      - background-music
+      - balance-lock
+      - balenaetcher
       - daisydisk
       - disk-inventory-x
-      - homebrew/cask-fonts/font-fira-code
-#      - google-backup-and-sync
+      - docker
+      - font-fira-code
+      - gpg-suite-no-mail
       - iterm2
+      - lastpass
+      - marshallofsound-google-play-music-player
       - meld
       - music-manager
       - musicbrainz-picard
       - pluralsight
       - postman
+      - pycharm
+      - rectangle
       - skitch
       - slack
       - sloth
