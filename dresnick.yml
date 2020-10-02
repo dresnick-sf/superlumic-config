@@ -120,6 +120,6 @@
     - { role: various, tags: various }
     # - { role: amazon-ecr-credential-helper, tags: amazon-ecr-credential-helper }
     - { role: atom-config, tags: atom-config }
-    - { role: screensaver, tags: screensaver }
+    # - { role: screensaver, tags: screensaver }
     # - { role: minikube, tags: minikube }
     # - { role: superlumic-role-implisit-dev, tags: implisit-dev }
