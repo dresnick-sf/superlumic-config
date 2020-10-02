@@ -4,7 +4,11 @@
 [status]
 	showUntrackedFiles = all
 [alias]
+	fixup = "!f() { TARGET=$(git rev-parse "$1"); git commit --fixup=$TARGET ${@:2} && EDITOR=true git rebase -i --autostash --autosquash $TARGET^; }; f"
+
 	st = status
+	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+	lba = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 [user]
 	name = David Resnick
 	email = dresnick@salesforce.com
@@ -12,3 +16,12 @@
 	prune = true
 [submodule]
 	recurse = true
+
+[advice]
+	detachedHead = false
+
+[core]
+    pager = delta --plus-color="#012800" --minus-color="#340001"
+
+[interactive]
+    diffFilter = delta --color-only

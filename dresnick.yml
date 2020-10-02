@@ -17,6 +17,7 @@
       - fortune
       - fswatch
       - git
+      - git-delta
       - graphviz
       - grep
       - id3v2
