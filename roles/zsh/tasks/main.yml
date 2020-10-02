@@ -1,9 +1,10 @@
 ---
 
-- name: install zsh
-  homebrew:
-    name: zsh
-    state: latest
+# installed from central list
+# - name: install zsh
+#   homebrew:
+#     name: zsh
+#     state: latest
 - name: get fork of zprezto
   git:
     repo: "{{ zprezto_repo_url }}"

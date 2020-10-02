@@ -1,10 +1,11 @@
 ---
 
-- name: install fzf apps
-  homebrew: name={{item}} state=latest
-  with_items:
-    - fzf
-    - highlight
+# installed from central list
+# - name: install fzf apps
+#   homebrew: name={{item}} state=latest
+#   with_items:
+#     - fzf
+#     - highlight
 # as described here: https://github.com/junegunn/fzf#settings
 
 - name: get script dependencies of fzf/ripgrep shell integration

@@ -10,10 +10,10 @@
 
 - debug: var=atom_upgrade_result
 
-- name: install brew apps
-  homebrew: name={{item}} state=latest
-  with_items:
-    - shellcheck
+# - name: install brew apps
+#   homebrew: name={{item}} state=latest
+#   with_items:
+#     - shellcheck
 
 - name: 'apm install : install atom packages'
   include_tasks: install-if-missing.yml
@@ -30,17 +30,21 @@
     - language-docker
     - language-groovy
     - language-jenkinsfile
+    - language-terraform
     - linter
     - linter-pylint
     - linter-shellcheck
+    - linter-terraform-semantics
     - linter-ui-default
     - minimap
     - minimap-highlight-selected
     - minimap-linter
     - pretty-json
+    - python-black
     - python-debugger
     - sort-all-the-things
     - split-diff
+    - terraform-lookup
 
 - name: Check if Atom is running
   shell: ps -ef | grep atom | grep -v grep
