@@ -8,6 +8,7 @@
 - name: get fork of zprezto
   git:
     repo: "{{ zprezto_repo_url }}"
+    accept_hostkey: yes
     recursive: yes
     dest: "{{ zprezto_dir }}"
 
