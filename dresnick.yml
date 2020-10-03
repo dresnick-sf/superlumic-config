@@ -11,12 +11,12 @@
       - homebrew/core
       - homebrew/services
       - kudulab/dojo-osx
-      - rhyeal/aws-rotate-iam-keys
-      - salesforce/policy_sentry
+      # - rhyeal/aws-rotate-iam-keys
+      # - salesforce/policy_sentry
     homebrew_installed_packages:
       - asciidoc
       - autossh
-      - rhyeal/aws-rotate-iam-keys/aws-rotate-iam-keys
+      # - rhyeal/aws-rotate-iam-keys/aws-rotate-iam-keys
       - bash
       - brew-cask-completion
       - dos2unix
@@ -42,7 +42,7 @@
       - oath-toolkit
       - opencv
       - openssh
-      - salesforce/policy_sentry/policy_sentry
+      # - salesforce/policy_sentry/policy_sentry
       - pstree
       - pyenv-virtualenv
       - ripgrep
