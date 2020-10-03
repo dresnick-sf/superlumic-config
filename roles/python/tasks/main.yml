@@ -4,8 +4,8 @@
   include_role:
     name: markosamuli.pyenv
   vars:
-    pyenv_python3_version: "3.6.9"
-    pyenv_global: "{{ pyenv_python3_version }}"
+    pyenv_python36_version: "3.6.11"
+    pyenv_global: "{{ pyenv_python36_version }}"
 
 - name: add python 3 packages
   pip:
