@@ -1,0 +1,32 @@
+- osx_defaults:
+    domain="com.apple.AppleMultitouchTrackpad"
+    key="{{ item.key }}"
+    type="{{ item.type }}"
+    value="{{ item.value }}"
+    state=present
+  notify: killall cfprefsd
+  with_items:
+    - key: 'ActuateDetents'
+      type: int
+      value: 0
+    - key: 'ActuationStrength'
+      type: int
+      value: 1
+    - key: 'Clicking'
+      type: int
+      value: 1
+    - key: 'FirstClickThreshold'
+      type: int
+      value: 0
+    - key: 'ForceSuppressed'
+      type: int
+      value: 1
+    - key: 'SecondClickThreshold'
+      type: int
+      value: 0
+    - key: 'TrackpadThreeFingerTapGesture'
+      type: int
+      value: 2
+    - key: 'TrackpadTwoFingerFromRightEdgeSwipeGesture'
+      type: int
+      value: 0

@@ -107,3 +107,6 @@
       key: 'AppleEnableSwipeNavigateWithScrolls'
       type: boolean
       value: false
+
+- name: 'configure trackpad'
+  include_tasks: trackpad.yml
