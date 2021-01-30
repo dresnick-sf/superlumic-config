@@ -38,6 +38,7 @@
     - zprofile
     - zshenv
     - zshrc
+    - p10k.zsh
 - name: set current shell to zsh
   become: yes
   command: "dscl . -create /Users/{{ ansible_user }} UserShell /usr/local/bin/zsh"
